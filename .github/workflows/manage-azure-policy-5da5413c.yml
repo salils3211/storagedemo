@@ -3,17 +3,17 @@ on:
   workflow_dispatch:
     inputs:
       remarks:
-        description: 'Reason for triggering the workflow run'
+        description: 'Reason for triggering the workflow run' 
         required: false
         default: 'Updating Azure Policies'
 
 
-## Uncomment the following if you wish to automatically trigger workflow run with every commit
-#
-#  push:
-#    paths:
-#      - 'policies/Storage_accounts_should_have_shared_access_signature_(SAS)_policies_configured_bc1b984e-ddae-40cc-801a-050a030e4fbe/**'
-#      - .github/workflows/manage-azure-policy-5da5413c.yml
+# Uncomment the following if you wish to automatically trigger workflow run with every commit
+
+  push:
+    paths:
+      - 'policies/Storage_accounts_should_have_shared_access_signature_(SAS)_policies_configured_bc1b984e-ddae-40cc-801a-050a030e4fbe/**'
+      - .github/workflows/manage-azure-policy-5da5413c.yml
 jobs:
   apply-azure-policy:
     runs-on: ubuntu-latest
